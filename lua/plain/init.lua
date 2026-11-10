@@ -62,12 +62,53 @@ function M.load()
     set(0, "Search", { bg = palette.search })
 
     -- Treesitter
-    set(0, "@variable", { fg = fg })
-    set(0, "@function", { fg = fg })
-    set(0, "@keyword", { fg = fg })
-    set(0, "@string", { fg = fg })
-    set(0, "@punctuation.bracket", { fg = fg })
-    set(0, "@punctuation.delimiter", { fg = fg })
+    local ts_fg_groups = {
+        "@variable",
+        "@variable.builtin",
+        "@variable.parameter",
+        "@variable.member",
+
+        "@function",
+        "@function.builtin",
+        "@function.call",
+        "@function.method",
+        "@function.method.call",
+        "@function.macro",
+
+        "@constructor",
+        "@property",
+        "@attribute",
+        "@attribute.builtin",
+        "@module",
+        "@module.builtin",
+
+        "@keyword",
+        "@keyword.function",
+        "@keyword.return",
+        "@keyword.operator",
+        "@keyword.conditional",
+        "@keyword.repeat",
+        "@keyword.import",
+        "@keyword.exception",
+        "@keyword.type",
+        "@keyword.coroutine",
+        "@keyword.directive",
+
+        "@string",
+        "@string.escape",
+        "@string.regexp",
+        "@string.documentation",
+        "@number.float",
+        "@character.special",
+
+        "@punctuation.bracket",
+        "@punctuation.delimiter",
+        "@punctuation.special",
+    }
+
+    for _, group in ipairs(ts_fg_groups) do
+        set(0, group, { fg = fg })
+    end
 end
 
 return M
