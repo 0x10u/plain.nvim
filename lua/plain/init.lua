@@ -47,8 +47,17 @@ function M.load()
     set(0, "Keyword", { fg = fg })
 
     set(0, "Type", { fg = fg })
+    set(0, "StorageClass", { fg = fg })
+    set(0, "Structure", { fg = fg })
     set(0, "PreProc", { fg = fg })
+    set(0, "Define", { fg = fg })
+    set(0, "Include", { fg = fg })
     set(0, "Special", { fg = fg })
+    set(0, "SpecialChar", { fg = fg })
+    set(0, "Exception", { fg = fg })
+    set(0, "Label", { fg = fg })
+    set(0, "Todo", { fg = fg })
+    set(0, "Error", { fg = fg })
 
     set(0, "Directory", { fg = fg })
 
